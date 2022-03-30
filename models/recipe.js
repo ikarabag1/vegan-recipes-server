@@ -1,7 +1,4 @@
 const mongoose = require('mongoose')
-const {
-    stringify
-} = require('nodemon/lib/utils')
 
 const recipeSchema = new mongoose.Schema({
     title: {
@@ -9,26 +6,22 @@ const recipeSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    ingredients: {
+    ingredient: {
         type: String,
         required: true,
         unique: true
     },
-    directions: {
+    direction: {
         type: String,
         required: true,
         unique: true
     },
-    nutritions: {
+    nutrition: {
         type: String,
         required: true,
         unique: true
     },
-    image: {
-        type: String,
-        required: true,
-        unique: true
-    },
+    image: String,
     users: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

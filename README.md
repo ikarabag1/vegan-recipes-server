@@ -7,20 +7,19 @@
 
 ## RESTful Routes Charts
 # Authentication
-| VERB   | URI Path                    | CRUD            | Description                             |
-| :----: | :-------------------------: | :-------------: | :-------------------------------------: |
-| POST   | `/register`                 | Create          | sign up/ user registeration             |
-| GET    | `/profile`                  | Read            | displays user profile page              |
-| POST   | `/login`                    | Read            | login /find user                        |
+| VERB   | URI Path  | CRUD     | Description       |
+| :----: | :------: | :------: | :----------------: |
+| POST   | `/register` | Create  | sign up/ user registeration   |
+| GET    | `/profile`  | Read   | displays user profile page   |
+| POST   | `/login`   | Read    | login /find user    |
 
 # 
-| VERB   | URL Path                    | CRUD           | Description                              |
-| :----: | :-------------------------: | :------------: | :--------------------------------------: |
-| GET    | `/`                         | Read           | Welcome page                             |
-| GET    | `/recipes`                  | Read           | displays recipes                         |
-| GET    | `/recipes/:id`              | Show           | display the specific recipe              |
-| POST   | `/recipes`                  | Create         | create a new recipe                      |
-| PUT    | `/recipes/:id`              | Update         | update the recipe created by user        |
-| DELETE | `/recipes/:id`              | Destroy        | removes the recipe user created          |
-| POST   | `/recipes/:id`              | Create         | add review or a note to specific recipe  |
-
+| VERB   | URL Path   | CRUD     | Description     |
+| :----: | :---------: | :------: | :-----------: |
+| GET    | `/`   | Read   | Welcome page   |
+| GET    | `/recipes`  | Read  | displays recipes   |
+| GET    | `/recipes/:id` | Show | display the specific recipe   |
+| POST   | `/recipes`   | Create  | create a new recipe     |
+| PUT    | `/recipes/:id` | Update | update the recipe created by user   |
+| DELETE | `/recipes/:id`  | Destroy | removes the recipe user created   |
+| POST   | `/recipes/:id`  | Create  | add review or a note to specific recipe  |

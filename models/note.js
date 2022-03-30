@@ -6,7 +6,7 @@ const noteSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    recipes: [{
+    recipe: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Recipe'
     }],
