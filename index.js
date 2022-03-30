@@ -1,10 +1,10 @@
+require('dotenv').config() //always comes firrst
 require('./models')
-require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 
 const app = express()
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 6001
 
 // middlewares
 app.use(cors())

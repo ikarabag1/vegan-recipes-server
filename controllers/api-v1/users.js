@@ -5,13 +5,14 @@ const bcrypt = require('bcrypt')
 const db = require('../../models')
 const requiresToken = require('../requiresToken')
 const user = require('../../models/user')
+const { resetWatchers } = require('nodemon/lib/monitor/watch')
 
 // POST /users/register -- CREATE a new user
 router.post('/register', async  (req, res) => {
   try {
     // check if the user exist already -- dont allow them to sign up again
     const userCheck = await db.User.findOne({
-      email: req.body.email
+      email: req.body.email,
     })
 
     if (userCheck) return res.status(409).json({ msg: 'did you forget that you already signed up w that email? 🧐' })
@@ -24,6 +25,7 @@ router.post('/register', async  (req, res) => {
     const newUser = await db.User.create({
       name: req.body.name,
       email: req.body.email,
+      username: req.body.username,
       password: hashedPassword
     })
 
@@ -31,6 +33,7 @@ router.post('/register', async  (req, res) => {
     const payload = {
       name: newUser.name,
       email: newUser.email,
+      username: newUser.username,
       id: newUser.id
     }
 
@@ -47,7 +50,8 @@ router.post('/register', async  (req, res) => {
 router.post('/login', async (req, res) => {
   // try to find the use in the db that is logging in
   const foundUser = await db.User.findOne({
-    email: req.body.email
+    email: req.body.email,
+    username: req.body.username
   })
 
   // if the user is not found -- return and send back a message that the user needs to sign up
@@ -64,6 +68,7 @@ router.post('/login', async (req, res) => {
   const payload = {
     name: foundUser.name,
     email: foundUser.email,
+    username: foundUser.username,
     id: foundUser.id
   }
 
@@ -72,7 +77,7 @@ router.post('/login', async (req, res) => {
 
   // send it back
   res.json({ token })
-})
+})  
 
 // GET /users/auth-locked -- example of checking an jwt and not serving data unless the jwt is valid
 router.get('/auth-locked', requiresToken, (req, res) => {
