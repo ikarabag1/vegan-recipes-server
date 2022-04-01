@@ -45,7 +45,7 @@ router.delete('/:id', async (req, res) => {
         return res.status(404).json({
             message: 'mot atm'
         })
-        res.json(note)
+        res.json(note) //getting dleeted from notes colelction in db but not from the recipes
     } catch (err) {
         res.status(503).json({
             message: 'server won\'t do that'
