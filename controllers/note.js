@@ -3,7 +3,7 @@ const note = require('../models/note')
 const db = require('../models')
 const requiresToken = require('./requiresToken')
 
-// | POST | create | insert a note or review to a specific recipe |
+// | POST | create | insert a note or review to a specific recipe | 
 router.post ('/:id', async (req, res) => {
     try {
         const foundRecipe = await db.Recipe.findById(req.params.id)
@@ -13,7 +13,7 @@ router.post ('/:id', async (req, res) => {
         newNote.recipe = foundRecipe.id
         foundRecipe.notes.push(newNote.id)
         await newNote.save()
-        await foundRecipe.save()
+        await foundRecipe.save() // not getting pushed to user notes array?????
         res.json(newNote) //should it be recipe since display it together
     } catch (err) {
         console.log(err)
@@ -23,7 +23,7 @@ router.post ('/:id', async (req, res) => {
     }
 })
 
-//  | PATCH | edit | update a note |
+// | PATCH | edit | update a note |
 router.patch('/:id', async (req, res) => {
     try {
         const note = await db.Note.findByIdAndUpdate(req.params.id, req.body, {
@@ -36,5 +36,22 @@ router.patch('/:id', async (req, res) => {
         })
     }
 })
+
+// | DELETE | destroy inserted note |
+router.delete('/:id', async (req, res) => {
+    try {
+        const note = await db.Note.findByIdAndDelete(req.params.id)
+        if (!note)
+        return res.status(404).json({
+            message: 'mot atm'
+        })
+        res.json(note)
+    } catch (err) {
+        res.status(503).json({
+            message: 'server won\'t do that'
+        })
+    }
+})
+
 // module.export
 module.exports = router
