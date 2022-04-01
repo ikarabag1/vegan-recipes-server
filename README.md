@@ -17,9 +17,9 @@
 | VERB   | URL Path   | CRUD     | Description     |
 | :----: | :---------: | :------: | :-----------: |
 | GET    | `/`   | Read   | Welcome page   |
-| GET    | `/recipes`  | Read  | displays recipes   |
-| GET    | `/recipes/:id` | Show | display the specific recipe   |
-| POST   | `/recipes`   | Create  | create a new recipe     |
+| GET    | `/recipes`  | Read  | displays all recipes by specific user |
+| GET    | `/recipes/:id` | Show | displays the specific recipe   |
+| POST   | `/recipes/:userid` | Create  | create a new recipe     |
 | PUT    | `/recipes/:id` | Update | update the recipe created by user   |
 | DELETE | `/recipes/:id`  | Destroy | removes the recipe user created   |
 | POST   | `/recipes/:id`  | Create  | add review or a note to specific recipe  |
