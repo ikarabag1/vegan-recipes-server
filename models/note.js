@@ -4,14 +4,14 @@ const noteSchema = new mongoose.Schema({
     review: {
         type: String,
     },
-    recipe: [{
+    recipe: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Recipe'
-    }],
-    users: [{
+    },
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }]
+    }
 }, {timestamps: true})
 
 module.exports = mongoose.model('Note', noteSchema)
