@@ -22,10 +22,10 @@
 [Vegan Recipes Client Repository](https://github.com/ikarabag1/vegan-recipes-client)
 
 # ERDs 
-![Wireframes](public/wireframes/userschema.png)
+![Wireframes](wireframes/userschema.png)
 
 # Wireframes
-![Wireframes](public/wireframes/wireframes.png)
+![Wireframes](wireframes/wireframes.png)
 
 # MVP goals
 Building a Mern app using ReactJS can be usable by many users;
