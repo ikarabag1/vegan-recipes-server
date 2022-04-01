@@ -52,8 +52,10 @@ Building a Mern app using ReactJS can be usable by many users;
 | GET    | `/recipes/:id` | Show | displays the specific recipe   |
 | POST   | `/recipes/:userid` | Create  | create a new recipe     |
 | PUT    | `/recipes/:id` | Update | update the recipe created by user |
-| POST   | `/recipes/:id`  | Create  | add review or a note to specific recipe  |
 | DELETE | `/recipes/:id`  | Destroy | removes the recipe user created  |
+| POST   | `/note/:id`  | Create  | adds a review or a note to the recipe  |
+| PATCH  | `/note/:id` | Update | updates the note created by user |
+| DELETE | `/note/:id`  | Destroy | removes the note user created  |
 
 # Strech goals
 - editing comments.
