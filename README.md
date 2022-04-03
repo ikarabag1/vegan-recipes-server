@@ -35,6 +35,7 @@ Building a Mern app using ReactJS can be usable by many users;
 - can show specific recipe.
 - can add a review to each recipe.
 
+
 ## RESTful Routes Charts
 # Authentication
 | VERB   | URI Path  | CRUD     | Description       |
